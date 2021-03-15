@@ -1,0 +1,53 @@
+* 系统说明
+主机名：arch
+用户名：hai
+* UEFIArchlinuxInstall.sh,legacyArchlinuxInstall.sh 说明
+** 更新远程数据库
+进入系统安装界面后，编辑 mirrorlist
+#+begin_src shell
+vim /etc/pacman.d/mirrorlist
+;; 按 /，搜索 ustc，将 https://mirrors.ustc，这一行复制到文本开头。
+
+pacman -Syy
+#+end_src
+** 安装 wget 下载脚本
+#+begin_src shell
+pacman -S wget
+
+;; 下载对应的 .sh
+wget https://gitee.com/lqdehq/archlinux-installer/raw/master/legacyArchlinuxInstall.sh
+wget https://gitee.com/lqdehq/archlinux-installer/raw/master/UEFIArchlinuxInstall.sh
+
+wget https://raw.githubusercontent.com/lqdehw/Archlinux-Installer/master/legacyArchlinuxInstall.sh
+wget https://raw.githubusercontent.com/lqdehw/Archlinux-Installer/master/UEFIArchlinuxInstall.sh
+
+chmod +x ???ArchlinuxInstall.sh
+
+./???ArchlinuxInstall.sh
+#+end_src
+** 更新时间
+若出现绿色文字，需按回车继续。
+** 分区、格式化和挂载
+输入安装的硬盘 =/dev/sdX= eg:/dev/sda
+出现分区格式选框
+*** legacy
+选择 bios
+我只化了一个 root 分区，输入 eg: =/dev/sda1=
+*** UEFI
+选择 GPT
+化了三个分区，对应 root, boot, home
+** Pacstrap 安装包
+** 本地化设置
+** root hai 密码设置
+会提示输入 root 和 hai 对应的密码，接着进入到 visudo，删除 Wheel
+组前的注释。
+** 启动服务
+** grub 安装
+** 关机 重启
+* bspwmInstall.sh 说明 
+** 无线连接 wifi
+** 下载脚本
+https://raw.githubusercontent.com/lqdehw/Archlinux-Installer/master/bspwmInstall.sh
+https://gitee.com/lqdehq/archlinux-installer/raw/master/bspwmInstall.sh
+** 自动下载相应软件包
+
