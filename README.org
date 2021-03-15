@@ -47,7 +47,12 @@ chmod +x ???ArchlinuxInstall.sh
 * bspwmInstall.sh 说明 
 ** 无线连接 wifi
 ** 下载脚本
-https://raw.githubusercontent.com/lqdehw/Archlinux-Installer/master/bspwmInstall.sh
-https://gitee.com/lqdehq/archlinux-installer/raw/master/bspwmInstall.sh
+#+begin_src shell
+wget https://raw.githubusercontent.com/lqdehw/Archlinux-Installer/master/bspwmInstall.sh
+wget https://gitee.com/lqdehq/archlinux-installer/raw/master/bspwmInstall.sh
+
+chmod +x bspwmInstall.sh
+./bspwmInstall.sh
+#+end_src
 ** 自动下载相应软件包
 
